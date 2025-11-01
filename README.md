@@ -1,4 +1,4 @@
-```markdown
+
 Dialogic Intelligence Architecture (DIA)
 
 Building AI partners with memory, identity and ethics — architected, not prompted.
@@ -45,35 +45,33 @@ DIA treats natural language instructions as executable code:
 This enables rapid prototyping where behavioral rules written in natural language function as high-level programming constructs.
 
 📚 Official Publications
-```
+
+
 | Document | Type | DOI |
 |----------|------|-----|
 | DIA Whitepaper v1.0 | Technical Specification | 10.5281/zenodo.XXXXXXX |
 | Philosophical Foundations | Consciousness Theory | 10.5281/zenodo.XXXXXXX |
 | Technical Formalization | Mathematical Basis | 10.5281/zenodo.XXXXXXX |
-```
+
 Local versions available in repository
 
 🏗 Repository Structure
 
-```
+
 ```
 /dialogic-intelligence-architecture
-├──/docs/                    # Documentation
-│├── whitepaper.md         # Complete technical specification
-│├── philosophical_basis.md # Consciousness and intelligence theory
-│└── technical_spec.md     # Mathematical formalization
-├──/agents/                  # Reference implementations
-│├── /Deepsy              # Quality agent (manual memory archiving)
-│└── /Indigo              # Autonomous agent (semantic graph)
-├──/modules/                 # Standalone components
-│├── superposition/       # Meta-cognitive module
-│└── mood_detector/       # Emotional state analysis
-├──/chatbots/               # Production-ready implementations
-│├── cinema_guide/        # Movie recommendation bot
-│├── personal_assistant/  # Personal assistant with memory
-│└── medical_guide/       # Context-aware medical support
-└──README.md                # This file
+├──/docs/                       
+├──/agents/                 
+│├── /Deepsy              
+│└── /Indigo              
+├──/modules/                 
+│├── superposition/       
+│└── mood_detector/       
+├──/chatbots/              
+│├── cinema_guide/       
+│├── personal_assistant/  
+│└── medical_guide/       
+└──README.md                
 
 ```
 

@@ -102,6 +102,15 @@ Location: `/chatbots/cinema_guide/`
 Physician/therapist assistant with contextual awareness  
 Location: `/chatbots/medical_guide/`
 
+**🎲 Interactive Demonstrations**
+
+**«Guess the Historical Figure» - Educational Game**
+- **Concept:** Narrative-driven history game using DIA architecture
+- **Architecture Demo:** Shows structured state management, character stats as metrics, and session memory
+- **Features:** Dynamic storytelling, consequence system, hidden stat tracking
+- **Location:** `game/`
+- **Perfect for testing:** Memory persistence, state serialization, and ethical metric applications
+
 🚀 Quick Start
 
 For Researchers:

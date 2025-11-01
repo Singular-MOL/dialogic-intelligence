@@ -27,7 +27,7 @@ You're seeing not a system description, but the system itself in a format that L
 Step 1: Load the architecture
 
 ```
-1. Copy ALL text from all module files
+1. Copy ALL the text of the desired module
 2. Paste into GPT-4/Claude/DeepSeek chat
 3. Press Enter and wait for response
 4. The system will auto-initialize and begin executing

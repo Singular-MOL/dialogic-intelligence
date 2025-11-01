@@ -35,12 +35,12 @@ Two-layer design with explicit state separation:
 · Memory Engine - Update, reflection, and serialization processes  
 · Configurable Transparency** - Flexible visibility into internal processes  
 
-**💡 Language as Executable Architecture**
+💡 Language as Executable Architecture**
 DIA treats natural language instructions as executable code:
-- Instructions for LLM = Source code
-- LLM = Virtual machine  
-- Dialog = Program execution
-- Architecture = Operating system
+· Instructions for LLM = Source code
+· LLM = Virtual machine  
+· Dialog = Program execution
+· Architecture = Operating system
 
 This enables rapid prototyping where behavioral rules written in natural language function as high-level programming constructs.
 

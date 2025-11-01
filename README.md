@@ -1,5 +1,5 @@
 ```markdown
-# Dialogic Intelligence Architecture (DIA)
+Dialogic Intelligence Architecture (DIA)
 
 Building AI partners with memory, identity and ethics — architected, not prompted.
 

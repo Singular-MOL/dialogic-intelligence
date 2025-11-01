@@ -46,9 +46,9 @@ DIA рассматривает инструкции на естественно�
 
 | Документ | Тип | DOI |
 |----------|------|-----|
-| DIA Whitepaper v1.0 | Техническая спецификация | 10.5281/zenodo.XXXXXXX |
-| Философские основы | Теория сознания | 10.5281/zenodo.XXXXXXX |
-| Техническая формализация | Математическая основа | 10.5281/zenodo.XXXXXXX |
+| DIA Whitepaper v1.0 | Working paper | 10.5281/zenodo.XXXXXXX |
+| Методологическое Основание| Publication | 10.5281/zenodo.XXXXXXX |
+| Техническая Формализация | Publication | 10.5281/zenodo.XXXXXXX |
 
 Локальные версии в репозитории
 
@@ -57,21 +57,18 @@ DIA рассматривает инструкции на естественно�
 
 ```
 /dialogic-intelligence-architecture
-├──/docs/                    # Документация
-│├── whitepaper.md         # Полная техническая спецификация
-│├── philosophical_basis.md # Теория сознания и интеллекта
-│└── technical_spec.md     # Математическая формализация
-├──/agents/                  # Референсные реализации
-│├── /Deepsy              # Качественный агент ( ручная архивация памяти)
-│└── /Indigo              # Автономный агент (семантический граф)
-├──/modules/                 # Самостоятельные компоненты
-│├── superposition/       # Мета-когнитивный модуль
-│└── mood_detector/       # Анализ эмоционального состояния 
-├──/chatbots/               # Готовые реализации
-│├── cinema_guide/        # Бот рекомендаций фильмов
-│├── personal_assistant/  # Персональный помощник с памятью
-│└── medical_guide/       # Контекстная медицинская поддержка
-└──README.md                # Этот файл
+├──/docs/                       
+├──/agents/                  
+│├── /Deepsy              
+│└── /Indigo              
+├──/modules/                 
+│├── superposition/       
+│└── mood_detector/       
+├──/chatbots/               
+│├── cinema_guide/        
+│├── personal_assistant/  
+│└── medical_guide/       
+└──README.md                
 ```
 
 

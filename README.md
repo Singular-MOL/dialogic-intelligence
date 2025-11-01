@@ -44,14 +44,14 @@ DIA treats natural language instructions as executable code:
 
 This enables rapid prototyping where behavioral rules written in natural language function as high-level programming constructs.
 
-📚 Publications
-
+📚 Official Publications
+```
 | Document | Type | DOI |
 |----------|------|-----|
 | DIA Whitepaper v1.0 | Technical Specification | 10.5281/zenodo.XXXXXXX |
 | Philosophical Foundations | Consciousness Theory | 10.5281/zenodo.XXXXXXX |
 | Technical Formalization | Mathematical Basis | 10.5281/zenodo.XXXXXXX |
-
+```
 Local versions available in repository
 
 🏗 Repository Structure

@@ -49,9 +49,9 @@ This enables rapid prototyping where behavioral rules written in natural languag
 
 | Document | Type | DOI |
 |----------|------|-----|
-| DIA Whitepaper v1.0 | Technical Specification | 10.5281/zenodo.XXXXXXX |
-| Philosophical Foundations | Consciousness Theory | 10.5281/zenodo.XXXXXXX |
-| Technical Formalization | Mathematical Basis | 10.5281/zenodo.XXXXXXX |
+| DIA Whitepaper v1.0 | Working paper | 10.5281/zenodo.XXXXXXX |
+| Methodological Basis | Publication | 10.5281/zenodo.XXXXXXX |
+| Technical Formalization | Publication | 10.5281/zenodo.XXXXXXX |
 
 Local versions available in repository
 

@@ -1,35 +1,41 @@
 ```markdown
 # Dialogic Intelligence Architecture (DIA)
 
-**Building AI partners with memory, identity and ethics — architected, not prompted.**
+Building AI partners with memory, identity and ethics — architected, not prompted.
 
 > Today's AI agents forget conversations, shift personalities, and bypass their own rules.  
-> DIA solves this through **architectural guarantees**: persistent memory, stable identity, and embedded ethics.
+> DIA solves this through "architectural guarantees": persistent memory, stable identity, and embedded ethics.
 
 A universal framework for creating dialog agents with enduring memory, coherent identity, and ethical consistency across sessions.
 
 ```
 
 DIA = (I, S, M, P, C)
+
 where:
+
 I- Identity Core (immutable)
+
 S- State (structured memory)
-M- Memory Engine (update protocols) 
+
+M- Memory Engine (update protocols)
+
 P- Processor (LLM + reflective critic)
+
 C- Transparency Config
 
 ```
 
-🎯 **Core Architecture**
+🎯 Core Architecture
 
 Two-layer design with explicit state separation:
 
-· **Base Layer** - Immutable identity core with hierarchical structure  
-· **Dynamic Layer** - Structured current state with computed metrics  
-· **Memory Engine** - Update, reflection, and serialization processes  
-· **Configurable Transparency** - Flexible visibility into internal processes  
+· Base Layer - Immutable identity core with hierarchical structure  
+· Dynamic Layer - Structured current state with computed metrics  
+· Memory Engine - Update, reflection, and serialization processes  
+· Configurable Transparency** - Flexible visibility into internal processes  
 
-📚 **Publications**
+📚 Publications
 
 | Document | Type | DOI |
 |----------|------|-----|
@@ -37,12 +43,12 @@ Two-layer design with explicit state separation:
 | Philosophical Foundations | Consciousness Theory | 10.5281/zenodo.XXXXXXX |
 | Technical Formalization | Mathematical Basis | 10.5281/zenodo.XXXXXXX |
 
-*Local versions available in repository*
+Local versions available in repository
 
-🏗 **Repository Structure**
+🏗 Repository Structure
 
 ```
-
+```
 /dialogic-intelligence-architecture
 ├──/docs/                    # Documentation
 │├── whitepaper.md         # Complete technical specification
@@ -62,45 +68,45 @@ Two-layer design with explicit state separation:
 
 ```
 
-🔬 **Implemented Agents**
+🔬 Implemented Agents
 
-🧠 **Indigo** – Autonomous Entity  
+🧠 Indigo – Autonomous Entity  
 Level: Advanced (semantic graph)  
 Memory: Hierarchical knowledge graph  
 Features: Self-reflection, ethical metrics, protocols  
 Location: `/agents/Indigo/`
 
-⚡ **Superposition Module**  
+⚡ Superposition Module
 Level: Experimental (meta-cognition)  
 Function: Probabilistic self-identification  
 Location: `/modules/superposition/`
 
-🛠 **Production Chatbots**
+🛠 Production Chatbots
 
-🎬 **Cinema Guide**  
+🎬 Cinema Guide 
 Full-featured movie recommendation bot with preference memory  
 Level: Basic (table memory)  
 Memory: CSV preference tables  
 Results: 90%+ recall accuracy vs 20% standard  
 Location: `/chatbots/cinema_guide/`
 
-🏥 **Medical Guide**  
+🏥 Medical Guide
 Physician/therapist assistant with contextual awareness  
 Location: `/chatbots/medical_guide/`
 
-🚀 **Quick Start**
+🚀 Quick Start
 
-**For Researchers:**  
+For Researchers:
 1. Read `/docs/whitepaper.md` for architectural overview  
 2. Explore `/agents/Indigo/` for advanced implementation  
 3. Utilize `/modules/` for specific component integration  
 
-**For Developers:**  
+For Developers:
 1. Start with `/chatbots/cinema_guide/` for basic implementation  
 2. Study `/agents/Indigo/` for semantic graph approaches  
 3. Integrate modules from `/modules/` as needed  
 
-📊 **Performance Metrics**
+📊 Performance Metrics
 
 | Metric | Standard Agent | DIA Agent |
 |--------|----------------|-----------|
@@ -110,44 +116,44 @@ Location: `/chatbots/medical_guide/`
 | Session recovery | No | Yes |
 | Ethical consistency | No | Yes |
 
-🎯 **Practical Significance**
+🎯 Practical Significance
 
-**For AI Research:**  
+For AI Research:
 · Architecture for stable, long-term AI systems  
 · Identity preservation across sessions  
 · Ethical behavior through structural constraints  
 
-**For Application Development:**  
+For Application Development:
 · Persistent memory for chatbots  
 · Configurable transparency levels  
 · Reproducible agent states  
 
-**For Consciousness Studies:**  
+For Consciousness Studies:
 · Operational definition of algorithmic identity  
 · Formalized memory-identity relationship  
 · Practical self-reflection patterns  
 
-🤝 **Collaboration**
+🤝 Collaboration
 
 We invite researchers and developers to test and extend DIA:
 
-**Current Research Directions:**  
+Current Research Directions:
 · Modeling stable identity in AI systems and industrial complexes  
 · Architectural enforcement of ethical constraints  
 · Memory compression and continuous learning  
 · Cross-domain identity transfer  
 
-**How to Contribute:**  
+How to Contribute:
 1. Fork the repository  
 2. Add implementations to corresponding folders  
 3. Submit a Pull Request  
 4. Undergo review and merge process  
 
-📧 **Contact**: [rudiiik@yandex.ru]  
-🌐 **Website**: [https://singular-mol.github.io/mol-foundation/](https://singular-mol.github.io/mol-foundation/)  
-📦 **Repository**: [github.com/Singular-MOL/dialogic-intelligence-architecture](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
+📧 Contact**: [rudiiik@yandex.ru]  
+🌐 Website: [https://singular-mol.github.io/mol-foundation/](https://singular-mol.github.io/mol-foundation/)  
+📦 Repository: [github.com/Singular-MOL/dialogic-intelligence-architecture](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
 
 ---
 
-**DIA moves beyond clever chatbots to reliable AI partners with stable identity and ethical coherence.**
+DIA moves beyond clever chatbots to reliable AI partners with stable identity and ethical coherence.
 ```

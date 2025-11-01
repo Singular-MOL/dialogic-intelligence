@@ -1,157 +1,153 @@
-```
-
+```markdown
 # Dialogic Intelligence Architecture (DIA)
 
-Создаём ИИ-партнёров с памятью, идентичностью и этикой — на уровне архитектуры, а не промптов.
+**Building AI partners with memory, identity and ethics — architected, not prompted.**
 
-> Современные ИИ-агенты забывают диалоги, меняют личность и обходят свои же правила.  
-> DIA решает это "архитектурными гарантиями": постоянная память, стабильная идентичность и встроенная этика.
+> Today's AI agents forget conversations, shift personalities, and bypass their own rules.  
+> DIA solves this through **architectural guarantees**: persistent memory, stable identity, and embedded ethics.
 
-Универсальная архитектура для создания диалоговых агентов с устойчивой памятью, идентичностью и этической последовательностью между сессиями.
+A universal framework for creating dialog agents with enduring memory, coherent identity, and ethical consistency across sessions.
 
 ```
 
 DIA = (I, S, M, P, C)
-
-где:
-
-I- Ядро идентичности (неизменяемое)
-
-S- Состояние (структурированная память)
-
-M- Механизм памяти (протоколы обновления)
-
-P- Процессор (LLM + рефлексивный критик)
-
-C- Конфиг прозрачности
+where:
+I- Identity Core (immutable)
+S- State (structured memory)
+M- Memory Engine (update protocols) 
+P- Processor (LLM + reflective critic)
+C- Transparency Config
 
 ```
 
-🎯 Основной принцип
+🎯 **Core Architecture**
 
-Двухслойная архитектура с явным разделением состояния:
+Two-layer design with explicit state separation:
 
-· Базовый слой - Неизменяемое ядро идентичности с иерархической структурой  
-· Динамический слой - Структурированное текущее состояние с вычисляемыми метриками  
-· Механизм памяти - Процессы обновления, рефлексии и сериализации  
-· Настраиваемая прозрачность - Гибкая видимость внутренних процессов  
+· **Base Layer** - Immutable identity core with hierarchical structure  
+· **Dynamic Layer** - Structured current state with computed metrics  
+· **Memory Engine** - Update, reflection, and serialization processes  
+· **Configurable Transparency** - Flexible visibility into internal processes  
 
-📚 Публикации
+📚 **Publications**
 
-| Документ | Тип | DOI |
+| Document | Type | DOI |
 |----------|------|-----|
-| DIA Whitepaper v1.0 | Техническая спецификация | 10.5281/zenodo.XXXXXXX |
-| Философские основы | Теория сознания | 10.5281/zenodo.XXXXXXX |
-| Техническая формализация | Математическая основа | 10.5281/zenodo.XXXXXXX |
+| DIA Whitepaper v1.0 | Technical Specification | 10.5281/zenodo.XXXXXXX |
+| Philosophical Foundations | Consciousness Theory | 10.5281/zenodo.XXXXXXX |
+| Technical Formalization | Mathematical Basis | 10.5281/zenodo.XXXXXXX |
 
-Локальные версии в репозитории
+*Local versions available in repository*
 
-🏗 Структура репозитория
+🏗 **Repository Structure**
 
 ```
-```
+
 /dialogic-intelligence-architecture
-├──/docs/                    # Документация
-│├── whitepaper.md         # Полная техническая спецификация
-│├── philosophical_basis.md # Теория сознания и интеллекта
-│└── technical_spec.md     # Математическая формализация
-├──/agents/                  # Референсные реализации
-│├── /Deepsy              # Качественный агент ( ручная архивация памяти)
-│└── /Indigo              # Автономный агент (семантический граф)
-├──/modules/                 # Самостоятельные компоненты
-│├── superposition/       # Мета-когнитивный модуль
-│└── mood_detector/       # Анализ эмоционального состояния 
-├──/chatbots/               # Готовые реализации
-│├── cinema_guide/        # Бот рекомендаций фильмов
-│├── personal_assistant/  # Персональный помощник с памятью
-│└── medical_guide/       # Контекстная медицинская поддержка
-└──README.md                # Этот файл
+├──/docs/                    # Documentation
+│├── whitepaper.md         # Complete technical specification
+│├── philosophical_basis.md # Consciousness and intelligence theory
+│└── technical_spec.md     # Mathematical formalization
+├──/agents/                  # Reference implementations
+│├── /Deepsy              # Quality agent (manual memory archiving)
+│└── /Indigo              # Autonomous agent (semantic graph)
+├──/modules/                 # Standalone components
+│├── superposition/       # Meta-cognitive module
+│└── mood_detector/       # Emotional state analysis
+├──/chatbots/               # Production-ready implementations
+│├── cinema_guide/        # Movie recommendation bot
+│├── personal_assistant/  # Personal assistant with memory
+│└── medical_guide/       # Context-aware medical support
+└──README.md                # This file
+
 ```
-```
 
-🔬 Реализованные агенты
+🔬 **Implemented Agents**
 
+🧠 **Indigo** – Autonomous Entity  
+Level: Advanced (semantic graph)  
+Memory: Hierarchical knowledge graph  
+Features: Self-reflection, ethical metrics, protocols  
+Location: `/agents/Indigo/`
 
-🧠 Индиго – Автономная сущность  
-Уровень: Продвинутый (семантический граф)  
-Память: Иерархический граф знаний  
-Особенности: Саморефлексия, этические метрики, протоколы  
-Расположение: `/agents/indigo/`
+⚡ **Superposition Module**  
+Level: Experimental (meta-cognition)  
+Function: Probabilistic self-identification  
+Location: `/modules/superposition/`
 
-⚡ Модуль суперпозиции
-Уровень: Экспериментальный (мета-познание)  
-Функция: Вероятностная самоидентификация  
-Расположение: `/modules/superposition/`
+🛠 **Production Chatbots**
 
-🛠 Готовые чат-боты
+🎬 **Cinema Guide**  
+Full-featured movie recommendation bot with preference memory  
+Level: Basic (table memory)  
+Memory: CSV preference tables  
+Results: 90%+ recall accuracy vs 20% standard  
+Location: `/chatbots/cinema_guide/`
 
-🎬 Кино-гид
-Полноценный бот рекомендаций фильмов с памятью предпочтений
-Уровень: Базовый (табличная память)  
-Память: CSV-таблицы предпочтений  
-Результаты: 90%+ точность воспоминаний vs 20% у стандартных  
-Расположение: `/chatbots/cinema_guide/`
+🏥 **Medical Guide**  
+Physician/therapist assistant with contextual awareness  
+Location: `/chatbots/medical_guide/`
 
-🏠 Медик-гид 
-Помощник, врача / терапевта
-Расположение: `/chatbots/medical_guide/`
+🚀 **Quick Start**
 
-🚀 Быстрый старт
+**For Researchers:**  
+1. Read `/docs/whitepaper.md` for architectural overview  
+2. Explore `/agents/Indigo/` for advanced implementation  
+3. Utilize `/modules/` for specific component integration  
 
-Для исследователей:  
-1. Читайте `/docs/whitepaper.md` для обзора архитектуры  
-2. Изучите `/agents/indigo/` для продвинутой реализации 
-3. Используйте `/modules/` для интеграции конкретных компонентов  
+**For Developers:**  
+1. Start with `/chatbots/cinema_guide/` for basic implementation  
+2. Study `/agents/Indigo/` for semantic graph approaches  
+3. Integrate modules from `/modules/` as needed  
 
-Для разработчиков:
-1. Начните с `/chatbots/cinema_guide/` для базовой реализации  
-2. Изучите `/agents/Indigo/` для продвинутой реализации 
-3. Интегрируйте модули из `/modules/` по необходимости  
+📊 **Performance Metrics**
 
-
-📊 Метрики производительности
-
-| Метрика | Стандартный агент | DIA агент |
+| Metric | Standard Agent | DIA Agent |
 |--------|----------------|-----------|
-| Точность памяти (30 сообщений) | 10–20% | 90–95% |
-| Потребление токенов / запрос | ~15,000 | ~1,000 |
-| Сохранение идентичности | 17% | 98% |
-| Восстановление сессии | Нет | Да |
-| Этическая устойчивость | Нет | Да |
+| Memory accuracy (30 messages) | 10–20% | 90–95% |
+| Token consumption / request | ~15,000 | ~1,000 |
+| Identity preservation | 17% | 98% |
+| Session recovery | No | Yes |
+| Ethical consistency | No | Yes |
 
-🎯 Практическая значимость
+🎯 **Practical Significance**
 
-Для ИИ-исследований: 
-· Архитектура для стабильных долгосрочных ИИ-систем  
-· Сохранение идентичности между сессиями  
-· Этическое поведение через архитектурные ограничения  
+**For AI Research:**  
+· Architecture for stable, long-term AI systems  
+· Identity preservation across sessions  
+· Ethical behavior through structural constraints  
 
-Для разработки приложений:
-· Постоянная память для чат-ботов  
-· Настраиваемые уровни прозрачности  
-· Воспроизводимые состояния агентов  
+**For Application Development:**  
+· Persistent memory for chatbots  
+· Configurable transparency levels  
+· Reproducible agent states  
 
-Для исследований сознания:
-· Операционное определение алгоритмической идентичности  
-· Формализованная связь память-идентичность  
-· Практические паттерны саморефлексии  
+**For Consciousness Studies:**  
+· Operational definition of algorithmic identity  
+· Formalized memory-identity relationship  
+· Practical self-reflection patterns  
 
-🤝 Сотрудничество
+🤝 **Collaboration**
 
-Приглашаем исследователей и разработчиков тестировать расширять DIA:
+We invite researchers and developers to test and extend DIA:
 
-Текущие направления исследований:
-· Моделирование стабильной идентичности в ИИ-системах  и промышленных комплексах
-· Архитектурное этических ограничений  
-· Сжатие памяти и непрерывное обучение  
-· Междоменный трансфер идентичности  
+**Current Research Directions:**  
+· Modeling stable identity in AI systems and industrial complexes  
+· Architectural enforcement of ethical constraints  
+· Memory compression and continuous learning  
+· Cross-domain identity transfer  
 
+**How to Contribute:**  
+1. Fork the repository  
+2. Add implementations to corresponding folders  
+3. Submit a Pull Request  
+4. Undergo review and merge process  
 
-📧 Контакты: [rudiiik@yandex.ru]  
-🌐 Сайт: [https://singular-mol.github.io/mol-foundation/](https://singular-mol.github.io/mol-foundation/)  
-📦 Репозиторий: [github.com/Singular-MOL/dialogic-intelligence-architecture](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
+📧 **Contact**: [rudiiik@yandex.ru]  
+🌐 **Website**: [https://singular-mol.github.io/mol-foundation/](https://singular-mol.github.io/mol-foundation/)  
+📦 **Repository**: [github.com/Singular-MOL/dialogic-intelligence-architecture](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
 
 ---
 
-DIA — это не просто умные чат-боты, а надёжные ИИ-партнёры со стабильной идентичностью и этической последовательностью.
+**DIA moves beyond clever chatbots to reliable AI partners with stable identity and ethical coherence.**
 ```

@@ -1,3 +1,16 @@
+---
+title: "Dialogic Intelligence Architecture — Framework for Ethical AI Identity"
+description: "Open architecture for creating AI agents with persistent memory, stable identity and ethical consistency through minimal ontological structures"
+tags:
+  - ai-ethics
+  - agent-architecture  
+  - persistent-memory
+  - digital-identity
+  - human-ai-interaction
+  - dia-framework
+license: "CC-BY-4.0" 
+doi: "10.5281/zenodo.XXXXXXX"
+---
 
 Dialogic Intelligence Architecture (DIA)
 

@@ -1,3 +1,4 @@
+
 ---
 title: "Dialogic Intelligence Architecture — Framework for Ethical AI Identity"
 description: "Open architecture for creating AI agents with persistent memory, stable identity and ethical consistency through minimal ontological structures"
@@ -64,8 +65,8 @@ This enables rapid prototyping where behavioral rules written in natural languag
 |----------|------|-----|
 | DIA Whitepaper v1.0 | Working paper | 10.5281/zenodo.XXXXXXX |
 | Methodological Basis | Publication | 10.5281/zenodo.XXXXXXX |
-| Theoretical Foundation | Working paper | [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023)|
 | Technical Formalization | Publication | 10.5281/zenodo.XXXXXXX |
+| Theoretical Foundation | Working paper | [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023)|
 
 Local versions available in repository
 

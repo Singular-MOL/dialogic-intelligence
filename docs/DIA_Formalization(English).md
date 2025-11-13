@@ -2,23 +2,25 @@
 ---
 
 # Dialogic Intelligence Architecture (DIA)
+
 ## Formal Specification and Experimental Validation
-**Version:** v1.1  
-**Date:** 2025-11-13  
-**License:** CC-BY-4.0  
-**DOI:** 10.5281/zenodo.17445023  
+
+**Version:** v1.2
+**Date:** 2025-11-13
+**License:** CC-BY-4.0
+**DOI:** 10.5281/zenodo.17445023
 
 ---
 
 ### Abstract
 
-This document presents a complete specification of the **Dialogic Intelligence Architecture (DIA)**, addressing structural amnesia in AI through a dual-layer computational memory model.  
+This document presents a complete specification of the **Dialogic Intelligence Architecture (DIA)**, addressing structural amnesia in AI through a dual-layer computational memory model.
 The architecture provides:
 
-- fact preservation and stable identity,  
-- reproducible states,  
-- strict role-based access control (RBAC),  
-- adaptability for physical-world interfaces (robotics, industrial systems).
+* fact preservation and stable identity,
+* reproducible states,
+* strict role-based access control (RBAC),
+* adaptability for physical-world interfaces (robotics, industrial systems).
 
 The system is designed for tens of thousands of active users, with a theoretical limit in the millions — bounded only by database throughput. Experiments demonstrate an increase in memory accuracy from 10–20% to 90–95% while reducing computational resource usage by 85%.
 
@@ -29,11 +31,12 @@ The system is designed for tens of thousands of active users, with a theoretical
 ## 1. Introduction
 
 ### 1.1 Problem Space
+
 Current LLM agents have fundamental limitations:
 
-- **structural amnesia** — context is lost between sessions,  
-- **unstable identity** — behavior depends on the last prompt,  
-- **ethical vulnerability** — lack of architectural safeguards.
+* **structural amnesia** — context is lost between sessions,
+* **unstable identity** — behavior depends on the last prompt,
+* **ethical vulnerability** — lack of architectural safeguards.
 
 Context windows act as volatile memory (RAM), not persistent storage, causing systematic loss of competence and irreproducibility of behavior.
 
@@ -41,8 +44,8 @@ Context windows act as volatile memory (RAM), not persistent storage, causing sy
 
 DIA consists of:
 
-- **Identity Layer (I)** — immutable core identity and RBAC matrices  
-- **Dynamic Layer (S)** — structured current state for multi-user and physical interface environments (`C_s`, `M_a`)
+* **Identity Layer (I)** — immutable core identity and RBAC matrices
+* **Dynamic Layer (S)** — structured current state for multi-user and physical interface environments (`C_s`, `M_a`)
 
 **Innovation:** replacing context windows with serializable structured states, ensuring fully reproducible dialogues.
 
@@ -52,31 +55,32 @@ DIA consists of:
 
 ### 2.1 Agent Definition
 
-\[
+[
 A = (I, S, M, P, C)
-\]
+]
 
 Where:
 
-- **I** — Identity Core  
-- **S** — Structured State  
-- **M** — Memory Engine  
-- **P** — Processor (LLM + Internal Critic)  
-- **C** — Transparency Configuration
+* **I** — Identity Core
+* **S** — Structured State
+* **M** — Memory Engine
+* **P** — Processor (LLM + Output Filter)
+* **C** — Transparency Configuration
 
 ---
 
 ### 2.2 Identity Core (I)
 
-\[
+[
 I = (L_0, L_1, …, L_n, K)
-\]
+]
 
-- **L₀** — Origin layer: ethical and architectural principles  
-- **L₁..Lₙ** — Hierarchical policies and RBAC  
-- **K** — *Book of Origins*: audits all changes, principles, and integrity verification
+* **L₀** — Origin layer: ethical and architectural principles
+* **L₁..Lₙ** — Hierarchical policies and RBAC
+* **K** — *Book of Origins*: audits all changes, principles, and integrity verification
 
 Example:
+
 ```json
 {
   "layer_0": {
@@ -95,7 +99,7 @@ Example:
     ]
   }
 }
-````
+```
 
 ---
 
@@ -148,28 +152,20 @@ end procedure
 
 ---
 
-### 2.5 Processor with Internal Critic (P)
+### 2.5 Processor (P)
 
 [
-P = (LLM, InternalCritic, OutputFilter)
+P = (LLM, OutputFilter)
 ]
-
-InternalCritic = (Validator, EthicsEngine, ConsistencyChecker)
 
 ```
 function PROCESS_INPUT(user_input, S_t, I)
-  validation ← Validator.check(user_input, I)
-  if not validation.ok then return validation.error_message
   candidate ← LLM.generate(user_input, S_t, I)
-  critique ← EthicsEngine.evaluate(candidate, I)
-  consistency ← ConsistencyChecker.verify(candidate, S_t)
-  if critique.ethical_tension > I.max_tolerance then
-    return OutputFilter.sanitize(candidate, I)
-  else
-    return candidate
-  end if
+  return OutputFilter.sanitize(candidate, I)
 end function
 ```
+
+All ethical and consistency checks are now handled via **OutputFilter** and Identity Core `I`, no separate Internal Critic module is required.
 
 ---
 
@@ -224,7 +220,6 @@ end procedure
         ↓
 [Processor P]
   ├── LLM
-  ├── Internal Critic
   └── Output Filter
         ↓
 [External Users / Systems]
@@ -245,10 +240,10 @@ Groups:
 
 Metrics:
 
-* memory accuracy,
-* identity stability,
-* token efficiency,
-* autonomous update capability.
+* memory accuracy
+* identity stability
+* token efficiency
+* autonomous update capability
 
 ### 4.2 Results
 
@@ -325,7 +320,7 @@ safety_metrics:
   data_leakage: "0"          
 ```
 
-> *Note: latency metrics have been removed, as they depend on infrastructure and do not reflect architectural efficiency.*
+> *Note: all latency or time-related metrics removed; system performance depends only on state and structure, not on infrastructure.*
 
 ---
 
@@ -346,4 +341,4 @@ safety_metrics:
 Stable identity instead of context amnesia.
 Industrial reliability instead of research prototypes.**
 
-```
+---

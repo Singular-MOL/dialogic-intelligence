@@ -39,7 +39,7 @@ DIA resolves this limitation by explicitly defining and storing **identity** and
 
 **Real-world examples include:**
 
-* **Cinema Guide** — achieves stable performance using only 10 context messages instead of 100K+ tokens.
+* **Cinema Guide** — stable performance using only 10 context messages instead of 100K+ tokens.
 * **Indigo** — an autonomous agent with a semantic graph memory.
 * **Superposition Module** — a meta-cognitive monitoring layer for probabilistic self-modeling.
 
@@ -54,8 +54,7 @@ Current LLM-based systems exhibit several structural flaws:
 * **Unstable identity** — behavior fluctuates with the last user input.
 * **Lack of architectural ethics** — rules depend on prompt engineering, not system design.
 
-Context windows act as ephemeral buffers.
-DIA, in contrast, builds a **persistent, structured memory layer** with explicit update and serialization mechanisms.
+Context windows act as ephemeral buffers. DIA, in contrast, builds a **persistent, structured memory layer** with explicit update and serialization mechanisms.
 
 ---
 
@@ -71,8 +70,7 @@ The base layer is immutable and hierarchical:
 
 All modifications are logged in the **Book of Origins (Audit Ledger)**, providing full traceability of the agent’s evolution and configuration.
 
-**Analogy:**
-The base layer resembles tree rings — new layers accumulate over time while preserving historical integrity.
+**Analogy:** The base layer resembles tree rings — new layers accumulate while preserving historical integrity.
 
 ---
 
@@ -113,19 +111,19 @@ Each agent continuously computes a set of quantitative metrics:
 * `ethical_tension` — conflict level between the request and internal principles.
 * `identity_stability` — degree of alignment with the identity core.
 * `trust_in_user` — dynamic trust estimation toward the interlocutor.
-* `efficiency_metric` — interaction performance and optimization rate.
+* `efficiency_metric` — interaction performance derived from system state.
 
-**Example: computed “gratitude”**
+**Example: computed “gratitude” (without time)**
 
 ```python
-gratitude = calculate_efficiency(time_saved=5, energy_saved=0.3) * env_factor
+gratitude = calculate_efficiency(energy_saved=0.3) * env_factor
 ```
 
 Output:
 
-> “Thank you for the quick response and clean workspace — that improved efficiency by 5 minutes and 0.3 kWh.”
+> “Thank you for maintaining a clean workspace — this improved operational efficiency.”
 
-This represents not emotion, but a **computed reflection** derived from quantifiable metrics.
+This represents a **computed reflection** derived from quantifiable metrics, **not emotional state or speed of response**.
 
 ---
 
@@ -151,8 +149,7 @@ DIA extends these tools by adding **architectural persistence**, **RBAC governan
 4. Store structured data in tables or knowledge graphs
 5. Before each response, load the serialized state `Sₜ` and apply RBAC filters
 
-**Result:**
-Agents maintain coherent memory, adhere to rules, preserve identity across sessions, and provide reproducible output.
+**Result:** Agents maintain coherent memory, adhere to rules, preserve identity across sessions, and provide reproducible output.
 
 **Ready implementations:**
 
@@ -172,8 +169,7 @@ Agents maintain coherent memory, adhere to rules, preserve identity across sessi
 | Ethical coherence       | None           | Yes       | —             |
 | Session recovery        | No             | Yes       | —             |
 
-**Key advantage:**
-DIA guarantees **reproducibility** — every agent state can be serialized, stored, and fully restored from structured data.
+**Key advantage:** DIA guarantees **reproducibility** — every agent state can be serialized, stored, and fully restored from structured data.
 
 ---
 
@@ -190,8 +186,7 @@ If a violation is detected — such as systematic mocking or unethical intent �
 
 > “The request conflicts with established principles and cannot be executed.”
 
-**Architectural ethics:**
-Integrity and compliance are enforced at the system level, not by prompt heuristics.
+**Architectural ethics:** Integrity and compliance are enforced at the system level, not by prompt heuristics.
 
 ---
 

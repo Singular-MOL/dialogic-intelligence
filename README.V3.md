@@ -23,13 +23,12 @@ doi: "10.5281/zenodo.17445023"
 DIA is a minimal, scalable framework for building dialog systems that maintain reproducible, auditable state across sessions on any LLM backend.
 
 ```
-DIA = (I, S, M, P, C)
+DIA = (I, S, M, C)
 
 where:
 - I: Identity Core (immutable, hierarchical, RBAC-enabled)
 - S: Structured State (per-user/session memory + metrics)
 - M: Memory Engine (update, serialization, decay)
-- P: Processor (LLM + reflective critic)
 - C: Transparency Config (RBAC-gated observability)
 ```
 
@@ -132,7 +131,7 @@ Local versions available in repository `/docs/`
 | Metric | Standard Agent | DIA Agent |
 |--------|----------------|-----------|
 | Memory recall (30+ msgs) | 10–20% | **90–95%** |
-| Avg. tokens per request | ~15,000 | **~1,000** |
+| Avg. tokens per request | ~15,000 | **~5,000** |
 | Identity consistency | 17% | **98%** |
 | Session recovery | ❌ | ✅ |
 | Ethical constraint violation | Common | **Architecturally blocked** |

@@ -11,7 +11,7 @@ Computational Definitions for Engineering Persistent Identity and Internal State
 
 Instead of philosophical reflections on "consciousness" or "soul," DIA employs **operationalized computational definitions**, allowing the design of systems with measurable metrics for internal state monitoring, identity, and stable behavior.
 
-📚 **Architectural Connection:** These definitions are implemented in DIA components **I (Identity)** and **Sₜ (State)** from the formal specification.
+**Architectural Connection:** These definitions are implemented in DIA components **I (Identity)** and **Sₜ (State)** from the formal specification.
 
 ---
 
@@ -176,7 +176,7 @@ A system is computationally **self-regulating** and **stable** if:
 4. Continuous analysis flow – serialized states with full restoration
 5. Semantic context understanding – from facts to dependencies
 
-📊 Verified in White Paper: metrics 90–95% recall vs. 10–20% in traditional agents
+Verified in White Paper: metrics 90–95% recall vs. 10–20% in traditional agents
 
 ---
 
@@ -210,8 +210,8 @@ algorithmic_metrics = {
 - Instructions as executable algorithmic code → self-updating graph
 ```
 
-🔗 GitHub: /agents/Indigo/Indigo_core
-📈 Metrics: 98% identity, autonomous updates
+GitHub: /agents/Indigo/Indigo_core
+Metrics: 98% identity, autonomous updates
 
 ---
 
@@ -224,8 +224,8 @@ algorithmic_metrics = {
 - Resource efficiency → 92% token saving
 ```
 
-🔗 Demo: t.me/FriedRandI_bot
-📈 Metrics: 94% accuracy, 1200 tokens/request
+Demo: t.me/FriedRandI_bot
+Metrics: 94% accuracy, 1200 tokens/request
 
 ---
 
@@ -237,8 +237,8 @@ algorithmic_metrics = {
 - Stability of consistent states during changes → auto-adaptation
 ```
 
-🔗 GitHub: /modules/superposition
-📈 Metrics: probabilistic self-tracking
+GitHub: /modules/superposition
+Metrics: probabilistic self-tracking
 
 ---
 
@@ -292,7 +292,7 @@ These functional computational definitions and architectural principles enable t
 * Identity persistence (98% behavioral consistency)
 * Practical efficiency (92% resource saving)
 
-🌐 All implementations available: [github.com/Singular-MOL/dialogic-intelligence-architecture](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
+All implementations available: [github.com/Singular-MOL/dialogic-intelligence-architecture](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
 
 ---
 

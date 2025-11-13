@@ -5,7 +5,7 @@
 
 ## Formal Specification and Experimental Validation
 
-**Version:** v1.2
+**Version:** v1.3
 **Date:** 2025-11-13
 **License:** CC-BY-4.0
 **DOI:** 10.5281/zenodo.17445023
@@ -17,14 +17,14 @@
 This document presents a complete specification of the **Dialogic Intelligence Architecture (DIA)**, addressing structural amnesia in AI through a dual-layer computational memory model.
 The architecture provides:
 
-* fact preservation and stable identity,
-* reproducible states,
-* strict role-based access control (RBAC),
-* adaptability for physical-world interfaces (robotics, industrial systems).
+* fact preservation and stable identity
+* reproducible states
+* strict role-based access control (RBAC)
+* adaptability for physical-world interfaces (robotics, industrial systems)
 
 The system is designed for tens of thousands of active users, with a theoretical limit in the millions — bounded only by database throughput. Experiments demonstrate an increase in memory accuracy from 10–20% to 90–95% while reducing computational resource usage by 85%.
 
-**Keywords:** AI architecture, long-term memory, AI identity, AI ethics, RBAC, reproducibility, computational self-reflection.
+**Keywords:** AI architecture, long-term memory, AI identity, AI ethics, RBAC, reproducibility, structured memory.
 
 ---
 
@@ -34,9 +34,9 @@ The system is designed for tens of thousands of active users, with a theoretical
 
 Current LLM agents have fundamental limitations:
 
-* **structural amnesia** — context is lost between sessions,
-* **unstable identity** — behavior depends on the last prompt,
-* **ethical vulnerability** — lack of architectural safeguards.
+* **structural amnesia** — context is lost between sessions
+* **unstable identity** — behavior depends on the last prompt
+* **ethical vulnerability** — lack of architectural safeguards
 
 Context windows act as volatile memory (RAM), not persistent storage, causing systematic loss of competence and irreproducibility of behavior.
 
@@ -165,7 +165,7 @@ function PROCESS_INPUT(user_input, S_t, I)
 end function
 ```
 
-All ethical and consistency checks are now handled via **OutputFilter** and Identity Core `I`, no separate Internal Critic module is required.
+All ethical and consistency checks are handled via **OutputFilter** and **Identity Core**; no separate module is required.
 
 ---
 

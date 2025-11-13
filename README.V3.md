@@ -64,15 +64,17 @@ DIA treats behavioral rules as **declarative constraints**, not prompts:
 
 This enables rapid prototyping with **deterministic, reproducible behavior**.
 
-## 📚 Publications
+## 📚 Official Publications
+
 
 | Document | Type | DOI |
 |----------|------|-----|
-| Theoretical Foundation | Working paper | [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023) |
-| DIA Whitepaper v1.0 | Technical specification | 10.5281/zenodo.XXXXXXX |
-| Formal Specification | Math & protocols | 10.5281/zenodo.XXXXXXX |
+| DIA Whitepaper v1.0 | Working paper | 10.5281/zenodo.XXXXXXX |
+| Methodological Basis | Publication | 10.5281/zenodo.XXXXXXX |
+| Technical Formalization | Publication | 10.5281/zenodo.XXXXXXX |
+| Theoretical Foundation | Working paper | [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023)|
 
-> Full texts in `/docs/`
+Local versions available in repository `/docs/`
 
 ## 🏗 Repository Structure
 

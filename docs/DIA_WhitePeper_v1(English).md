@@ -164,7 +164,7 @@ DIA extends these tools by adding **architectural persistence**, **RBAC governan
 | Metric                  | Standard Agent | DIA Agent | Gain          |
 | ----------------------- | -------------- | --------- | ------------- |
 | Memory recall           | 10–20%         | 90–95%    | ×4.5          |
-| Avg. tokens per request | ~15,000        | ~1,000    | 92% reduction |
+| Avg. tokens per request | ~15,000        | ~5,000    | 92% reduction |
 | Identity consistency    | 17%            | 98%       | ×5.8          |
 | Ethical coherence       | None           | Yes       | —             |
 | Session recovery        | No             | Yes       | —             |

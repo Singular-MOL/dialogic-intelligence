@@ -250,7 +250,7 @@ algorithmic_metrics = {
 | ------------------- | ---------------- | ----------------------- | -------------------- |
 | Memory              | Context window   | Structured state        | 94% vs 18% recall    |
 | Identity            | Prompt-dependent | Architectural           | 98% vs 17% stability |
-| Resource Efficiency | 15K tokens       | 1.2K tokens             | 92% saving           |
+| Resource Efficiency | 15K tokens       | 5.0K tokens             |            |
 | Reproducibility     | ❌                | ✅ Session serialization | —                    |
 
 ---

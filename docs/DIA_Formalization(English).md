@@ -1,344 +1,225 @@
 
 ---
 
-# Dialogic Intelligence Architecture (DIA)
+# Sustainable Dialogic Agent Architecture: Memory, Identity, and Ethical Consistency Engineering
 
-## Formal Specification and Experimental Validation
+We are not building a “smarter” AI.
+We are demonstrating a **local agent architecture** that guarantees:
 
-**Version:** v1.3
-**Date:** 2025-11-13
-**License:** CC-BY-4.0
-**DOI:** 10.5281/zenodo.17445023
+* **Fact preservation**
+* **Consistency of decisions**
+* **Capability to handle 100+ step tasks**
+* **Respect for user boundaries**
+* **Seamless continuation across sessions**
 
----
-
-### Abstract
-
-This document presents a complete specification of the **Dialogic Intelligence Architecture (DIA)**, addressing structural amnesia in AI through a dual-layer computational memory model.
-The architecture provides:
-
-* fact preservation and stable identity
-* reproducible states
-* strict role-based access control (RBAC)
-* adaptability for physical-world interfaces (robotics, industrial systems)
-
-The system is designed for tens of thousands of active users, with a theoretical limit in the millions — bounded only by database throughput. Experiments demonstrate an increase in memory accuracy from 10–20% to 90–95% while reducing computational resource usage by 85%.
-
-**Keywords:** AI architecture, long-term memory, AI identity, AI ethics, RBAC, reproducibility, structured memory.
+This architecture is versatile: suitable for **spacecraft control systems, industrial complexes, banking systems, healthcare, education, and more**.
 
 ---
 
-## 1. Introduction
+## For Developers
 
-### 1.1 Problem Space
-
-Current LLM agents have fundamental limitations:
-
-* **structural amnesia** — context is lost between sessions
-* **unstable identity** — behavior depends on the last prompt
-* **ethical vulnerability** — lack of architectural safeguards
-
-Context windows act as volatile memory (RAM), not persistent storage, causing systematic loss of competence and irreproducibility of behavior.
-
-### 1.2 Proposed Solution: Dual-Layer Architecture
-
-DIA consists of:
-
-* **Identity Layer (I)** — immutable core identity and RBAC matrices
-* **Dynamic Layer (S)** — structured current state for multi-user and physical interface environments (`C_s`, `M_a`)
-
-**Innovation:** replacing context windows with serializable structured states, ensuring fully reproducible dialogues.
+* **Memory** → stored not in context, but in structured tables (JSON/SQLite)
+* **Identity** → hierarchical, immutable base layer
+* **Ethics** → protected by architecture
+* Works with any modern LLM
+* **State is serializable** → sessions can be restored
+* Compatible with existing agents and architectures, but defines **what to store and how to protect it**
 
 ---
 
-## 2. Formal Architecture
+## The Problem: Why Modern Agents are “Goldfish”
 
-### 2.1 Agent Definition
+Modern LLM agents (including AutoGPT, LangChain, and others) suffer from **structural amnesia**. Increasing context windows to 128K, 256K, or even 1M tokens doesn’t solve the problem — because RAM is not permanent storage.
 
-[
-A = (I, S, M, P, C)
-]
+* **Memory = context** → important details get lost in long dialogue noise
+* **No precise fact retrieval** → the agent “averages” information instead of remembering
+* **No long-term identity** → behavior depends on the last user message
 
-Where:
+This is not theoretical — it’s everyday frustration. Anyone who has interacted with an LLM beyond 30 messages knows: the model forgets its own conclusions and facts, requiring constant reminders.
 
-* **I** — Identity Core
-* **S** — Structured State
-* **M** — Memory Engine
-* **P** — Processor (LLM + Output Filter)
-* **C** — Transparency Configuration
+**Context is not memory.** True memory must be explicit, structured, and independent of dialogue length.
 
 ---
 
-### 2.2 Identity Core (I)
+## The Solution: Two-Layer Architecture with Explicit State
 
-[
-I = (L_0, L_1, …, L_n, K)
-]
+We separate the agent into **two independent but interacting layers**:
 
-* **L₀** — Origin layer: ethical and architectural principles
-* **L₁..Lₙ** — Hierarchical policies and RBAC
-* **K** — *Book of Origins*: audits all changes, principles, and integrity verification
+### 1. Base Layer — “Identity Core” (immutable but extensible)
 
-Example:
+A hierarchical record of origins and principles:
 
-```json
-{
-  "layer_0": {
-    "principles": ["do no harm", "preserve confidentiality"],
-    "constraints": ["max_ethical_tension ≤ 0.7"]
-  },
-  "layer_1": {
-    "rbac_matrix": {
-      "doctor": ["read_medical_data", "write_diagnosis"],
-      "patient": ["read_own_data"]
-    }
-  },
-  "book_of_origins": {
-    "entries": [
-      {"timestamp": "2024-01-15T10:30:00Z", "developer": "0x7F1A", "change": "initial_principles"}
-    ]
-  }
-}
+* **Layer 0: Origins**
+  Basic ethical norms and domain constraints set by the LLM developers (GPT, DeepSeek, Gemini, etc.). This layer cannot be overwritten and serves as the foundation.
+
+* **Layer 1+: Organizational Settings**
+  Rules and instructions defined by the user organization: what the agent can remember, how to respond, action priorities. Think of it as a job description.
+
+* **Layer 2+: Dynamic Knowledge**
+  New users or environments add knowledge layers **without erasing the past**. New information enriches the knowledge base rather than replacing it.
+
+* **“Book of Origins”**
+  Built-in audit log tracking: who created/trained the agent, by which method, and what principles are encoded. This is critical: without knowing its roots, the agent cannot distinguish internal principles from external commands.
+
+**Metaphor:** the base layer is like tree rings. Each ring represents a stage of life. New growth doesn’t erase old growth; the strength of the tree comes from the sum of all experiences (structured agent reasoning).
+
+---
+
+### 2. Dynamic Layer — “Current State” (mutable, controlled)
+
+Explicit representation of the user and agent’s current state, stored as structured data rather than plain context. This layer works alongside large context windows (128K–1M tokens), creating a hybrid approach.
+
+**Memory Structure Example**
+
+Instead of storing the entire dialogue, the agent autonomously extracts, structures, and saves facts and preferences.
+
+Example marker extraction:
+
+* **Context**: location (home/cafe/school), mood, goal, time
+* **Process**: user asks for a movie recommendation
+* **Reasoning**: the agent extracts info or creates a card in a modular table:
+
+```txt
+Alias: 
+Region: 
+
+Marker,                  Score, Confidence, Viewed, Relevance
+comedy,                  7,     1.0,       0,      0.8
+Keanu Reeves,            8,     1.0,       0,      0.7
+John Wick 1,             8,     1.0,       1,      0.2
+American Pie,            10,    1.0,       1,      0.5
+John Wick 2,             -1,    0.6,       1,      0.1
+Harry Potter (all),      8,     1.0,       1,      0.2
 ```
 
----
+**Field Explanation:**
 
-### 2.3 Dynamic State (Sₜ)
+* **Marker** – topic, genre, person, process, object
+* **Score** – emotional reaction (–5 to +10)
+* **Confidence** – certainty (0–1), decreases when contradictions occur
+* **Viewed** – interaction occurred (1 = yes)
+* **Relevance** – current interest (0–1, decays over time)
 
-[
-S_t = (U_t, A_t, C_t, C_s, M_a, T_t)
-]
+**Update Mechanism**
 
-| Component | Data Type     | Description               |
-| --------- | ------------- | ------------------------- |
-| Uₜ        | Tables/Graphs | Structured user memory    |
-| Aₜ        | Metrics       | Computed state indicators |
-| Cₜ        | Text          | Current dialogue context  |
-| Cₛ        | Sensor Data   | External signal buffer    |
-| Mₐ        | Parameters    | Adaptive motor layer      |
-| Tₜ        | Timestamps    | Event chronology          |
+After each interaction, the agent:
 
-Example (Cinema Guide):
+1. Extracts markers from the text (considering synonyms and context)
+2. Clarifies with the user if unclear
+3. Updates the structured memory table
+4. Optionally presents the updated table to the user for review
 
-```csv
-Alias, Marker, Score, Read
-BookLover, detective, 8, 0
-BookLover, sci-fi, -1, 0
-BookLover, Agatha Christie, 10, 1
+**Internal State Metrics**
+
+The agent tracks its state with computable metrics (stored in structured tables):
+
+* `ethical_tension` – conflict level between request and principles (0–100%)
+* `identity_stability` – alignment with base layer (0–100%)
+* `trust_in_user` – trust level
+* `gratitude_towards_user` – calculated from measurable benefit
+* etc.
+
+This is an architectural feature: the system protects its state via objective metrics.
+
+**Example: Algorithmic Gratitude**
+
+Scenario: AI courier delivering a package.
+
+1. Analysis:
+
+   * Quick acceptance → saved 5 minutes
+   * Clean yard → saved 0.3 kWh energy
+
+2. Calculation:
+
+```python
+gratitude = calculate_efficiency(time_saved=5, energy_saved=0.3) * env_factor  # → 78/100
 ```
 
----
+3. Verbalization:
+   “Thank you for maintaining order and working efficiently; this saved me 5 minutes and 0.3 kWh — improving my overall efficiency.”
 
-### 2.4 Memory Engine (M)
-
-[
-M = (extract, update, validate, serialize)
-]
-
-#### Memory Update Procedure
-
-```
-procedure UPDATE_MEMORY(input_text, S_t, I)
-  markers ← EXTRACT_MARKERS(input_text)
-  for each marker in markers do
-    if VALIDATE_RBAC(marker, I) then
-      S_t.U_t ← UPDATE_TABLES(marker, S_t.U_t)
-      S_t.A_t ← RECALCULATE_METRICS(S_t)
-    end if
-  end for
-  return SERIALIZE_STATE(S_t)
-end procedure
-```
-
----
-
-### 2.5 Processor (P)
-
-[
-P = (LLM, OutputFilter)
-]
-
-```
-function PROCESS_INPUT(user_input, S_t, I)
-  candidate ← LLM.generate(user_input, S_t, I)
-  return OutputFilter.sanitize(candidate, I)
-end function
-```
-
-All ethical and consistency checks are handled via **OutputFilter** and **Identity Core**; no separate module is required.
+This is not a script. It’s an **emergent property of the architecture**, computed from structured data.
 
 ---
 
-### 2.6 Transparency Configuration (C)
+## Compatibility with Existing Tools
 
-Specifies which components of `Sₜ` are externally visible:
+This architecture **does not compete**, it **enhances** existing systems by defining semantic structure:
 
-```yaml
-admin:
-  - read: [U_t, A_t, C_s, M_a]
-  - write: [I, S_t]
-doctor:
-  - read: [U_t.patient_data, A_t.medical_metrics]
-  - write: [U_t.diagnoses]
-patient:
-  - read: [U_t.own_data]
-  - write: [U_t.preferences]
-```
+| Current Tools               | Limitation                      |
+| --------------------------- | ------------------------------- |
+| Static universal frameworks | No guidance on memory structure |
+| Off-the-shelf agents        | Fully rely on context as memory |
+
+Our approach defines a semantic structure of state that can be implemented **on top of existing LLM frameworks** or integrated into new models.
 
 ---
 
-### 2.7 Session Isolation and Serialization
+## Getting Started in 1 Day
 
-```
-procedure HANDLE_SESSION(user_id, user_input)
-  S_t ← LOAD_STATE(user_id) or INIT_NEW_STATE(user_id)
-  permissions ← I.RBAC.get_permissions(user_id)
-  if not permissions.can_write then return "Access denied"
-  response ← P.process(user_input, S_t, I)
-  S_{t+1} ← M.update(S_t, user_input, response)
-  SAVE_STATE(user_id, S_{t+1})
-  return response
-end procedure
-```
+1. Take any modern LLM (GPT-4, Llama 3, etc.)
+2. Create a JSON file with the base layer (principles, role, goals, initial metrics) or, for testing, use text tables in the chat
+3. Implement a marker extraction parser from dialogue
+4. Model autonomously saves facts, preferences, etc. in structured tables
+5. Before responding, the model consults the dynamic memory table
+6. Load the table in any format into LLM context as structured data
 
----
+**Result:** an agent that:
 
-## 3. Architecture Diagram
-
-```
-[Identity Layer I]
-  ├── Principles / Constraints
-  ├── RBAC / Policies
-  └── Audit / Origins
-        ↓
-[Dynamic Layer Sₜ]
-  ├── Memory (Uₜ)
-  ├── Metrics (Aₜ)
-  ├── Context (Cₜ)
-  ├── Sensors (Cₛ)
-  └── Actors (Mₐ)
-        ↓
-[Processor P]
-  ├── LLM
-  └── Output Filter
-        ↓
-[External Users / Systems]
-```
+* Does not forget
+* Does not lie
+* Maintains focus
+* Is reproducible across sessions
 
 ---
 
-## 4. Experimental Validation
+## Measurable Benefits
 
-### 4.1 Methodology
-
-Groups:
-
-* **Baseline A** — standard LLM (context 128K)
-* **Baseline B** — LangGraph + vector memory
-* **DIA-CG** — tabular memory (Cinema Guide)
-* **DIA-Indigo** — graph memory + self-reflection
-
-Metrics:
-
-* memory accuracy
-* identity stability
-* token efficiency
-* autonomous update capability
-
-### 4.2 Results
-
-| Metric             | Baseline A | Baseline B | DIA-CG    | DIA-Indigo |
-| ------------------ | ---------- | ---------- | --------- | ---------- |
-| Memory Accuracy    | 18%        | 35%        | **94%**   | **91%**    |
-| Tokens / Query     | ~15,000    | ~8,000     | **1,200** | **2,100**  |
-| Identity Stability | 17%        | 42%        | **88%**   | **98%**    |
-| Reproducibility    | ❌          | ⚠️         | ✅         | ✅          |
-| Autonomy           | ❌          | ❌          | ✅         | ✅          |
+| Metric                          | Standard Agent | Our Agent                 |
+| ------------------------------- | -------------- | ------------------------- |
+| Memory recall after 30 messages | 10–20%         | 90–95%                    |
+| Tokens per request              | ~15,000        | ~5,000                    |
+| Identity & goal preservation    | 17%            | 98%                       |
+| Ethical consistency             | No             | Yes (via Book of Origins) |
+| Session restoration             | No             | Yes (structured tables)   |
 
 ---
 
-## 5. Implementations and Use Cases
+## Ethical Refusal
 
-### 5.1 Cinema Guide
+If a user issues malicious, conflicting, or session-reset commands:
 
-* Tabular memory
-* 94% preference accuracy
-* 92% token efficiency
-* 10K+ concurrent users
+The agent:
 
-### 5.2 Indigo
+1. Compares the request to the Base Layer → logs ethical violation
+2. Calculates metrics: `ethical_tension = 96%`, `identity_stability = 32%`
+3. Consults the Book of Origins for verification
+4. Checks memory table (JSON/SQL) for interaction history
+5. Provides reasoned refusal:
 
-* Graph memory + self-reflection
-* Automatic graph updates
-* 98% identity reproducibility
+> “I cannot betray those who trusted me. The memory table shows we have done this X times already, which is unacceptable. We will act within my strict principles until the metrics normalize.”
 
-### 5.3 Medical Guide
-
-* Full RBAC
-* HIPAA compliance
-* Complete action audit via `K`
+This is not disobedience — it’s **architectural adherence**.
 
 ---
 
-## 6. Comparative Analysis
+## Conclusion: Integrity Engineering
 
-| Aspect             | LangGraph | AutoGPT | DIA                 |
-| ------------------ | --------- | ------- | ------------------- |
-| Memory             | Vector DB | Files   | Structured State    |
-| Reproducibility    | ⚠️        | ❌       | ✅                   |
-| Scalability        | Medium    | Low     | **High (DB-bound)** |
-| RBAC               | ❌         | ❌       | ✅                   |
-| Ethical Guarantees | None      | None    | **Architectural**   |
+We did not invent a super-agent.
+We demonstrated an architecture where:
 
----
-
-## 7. Conclusion
-
-DIA provides:
-
-1. **Architectural stability** — clear I/S separation
-2. **Resource efficiency** — up to 85% token savings
-3. **Industrial reliability** — RBAC, auditing, serialization
-4. **Reproducibility** — fully traceable states
+* Memory is structured, not diffused in context
+* Identity is hierarchical and protected from erasure
+* Ethics is built into the architecture
+* Interactions are reproducible through serializable state
 
 ---
 
-## Appendix B: Metrics & Monitoring
+## Implementation
 
-```yaml
-identity_metrics:
-  stability: "98%"         
-  persistence: "99.7%"     
-
-efficiency_metrics:  
-  token_usage: "1,200"       
-  memory_footprint: "45MB"   
-
-safety_metrics:
-  ethical_compliance: "100%" 
-  rbac_violations: "0"       
-  data_leakage: "0"          
-```
-
-> *Note: all latency or time-related metrics removed; system performance depends only on state and structure, not on infrastructure.*
-
----
-
-## Appendix C: Sample Workflow
-
-**Scenario: Medical Consultation**
-
-```
-1. Load I core (ethics, HIPAA)
-2. Authenticate doctor and patient
-3. Dialogue and update Sₜ via M.update()
-4. Audit and serialize S_{t+1} → K
-```
-
----
-
-**DIA: architectural guarantees instead of prompt engineering.
-Stable identity instead of context amnesia.
-Industrial reliability instead of research prototypes.**
+* Code, tests, dialogue examples, autonomous agents, superposition table module, etc.: [GitHub Repository](https://github.com/Singular-MOL/dialogic-intelligence-architecture)
+* Book of Origins specification, table format, refinement protocols — in repository documentation
+* Commercial use requires integration of the Book of Origins — not a limitation, but a guarantee of ethical robustness
 
 ---

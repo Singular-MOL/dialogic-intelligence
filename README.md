@@ -66,8 +66,8 @@ This enables rapid prototyping with **deterministic, reproducible behavior**.
 ## 📚 Official Publications
 
 
-| Document | Type | DOI |
-|----------|------|-----|
+| Document | Type | Local version | DOI |
+|----------|------|---------------|-----|
 | DIA Whitepaper v1.0 | Working paper | 10.5281/zenodo.XXXXXXX |
 | Methodological Basis | Publication | 10.5281/zenodo.XXXXXXX |
 | Technical Formalization | Publication | 10.5281/zenodo.XXXXXXX |
@@ -79,7 +79,7 @@ Local versions available in repository `/docs/`
 
 ```
 /dialogic-intelligence-architecture
-├── /docs/               # Specifications, MOL alignment, formal models
+├── /docs/               
 ├── /agents/             # Advanced stateful agents
 │   ├── /Indigo          # Semantic graph memory, self-monitoring
 │   └── /Deepsy          # Identity persistence experiments

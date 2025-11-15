@@ -68,10 +68,10 @@ This enables rapid prototyping with **deterministic, reproducible behavior**.
 
 | Document | Type | Local version | DOI |
 |----------|------|---------------|-----|
-| DIA Whitepaper v1.0 | Working paper | 10.5281/zenodo.XXXXXXX |
-| Methodological Basis | Publication | 10.5281/zenodo.XXXXXXX |
-| Technical Formalization | Publication | 10.5281/zenodo.XXXXXXX |
-| Theoretical Foundation | Working paper | [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023)|
+| DIA Whitepaper v1.0 | Working paper | Document 1 | 10.5281/zenodo.XXXXXXX |
+| Methodological Basis | Publication | Document 2 | 10.5281/zenodo.XXXXXXX |
+| Technical Formalization | Publication | Document 3 | 10.5281/zenodo.XXXXXXX |
+| Theoretical Foundation | Working paper || Document 4  [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023)|
 
 Local versions available in repository `/docs/`
 
